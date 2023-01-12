@@ -1,0 +1,32 @@
+{
+  "name": "marketplace-contracts",
+  "version": "1.0.0",
+  "description": "Theta Arena Marketplace Smart Contracts",
+  "main": "index.js",
+  "author": "DinosorTK",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.1.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.1",
+    "hardhat": "^2.4.3",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.17",
+    "solhint": "^3.3.6"
+  },
+  "scripts": {
+    "prettier": "prettier --write **/*.sol",
+    "deploy-marketplace": "npx hardhat run --network bsctest scripts/box_v1.js",
+    "deploy-br": "npx hardhat run --network vchain scripts/bridge_upgrade.js",
+    "verify-testnet": "npx hardhat verify --network bsctest 0x52dDCeDF515c4C23cE8971B36Af688a800fcB3B1 --contract contracts/SMC.sol:SMC",
+    "clean": "npx hardhat clean"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "@openzeppelin/contracts-upgradeable": "^4.8.0-rc.1",
+    "@openzeppelin/hardhat-upgrades": "^1.20.0"
+  }
+}
